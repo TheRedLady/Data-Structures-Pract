@@ -51,13 +51,12 @@ public:
 };
 
 template <typename T>
-LinkedList<T>::LinkedList() {
-	this->head = nullptr;
-	this->size = 0;
-}
+LinkedList<T>::LinkedList():
+	head(nullptr), size(0) {}
 
 template <typename T>
-LinkedList<T>::LinkedList(LinkedList const & other){
+LinkedList<T>::LinkedList(LinkedList const & other):
+	head(nullptr), size(0) {
 	this->head = this->copyList(other.head);
 }
 
@@ -132,7 +131,6 @@ void LinkedList<T>::insertAt(size_t index, T const & data){
 
 template <typename T>
 void LinkedList<T>::removeAt(size_t index){
-	//cout << "Size: " << this->size <<endl;
 	if(index >= this->size){	
 		throw length_error("Index out of bounds.");
 	}
