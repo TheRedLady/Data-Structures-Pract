@@ -1,0 +1,12 @@
+Wikipedia:
+https://en.wikipedia.org/wiki/Binary_heap
+
+Good explanation:
+https://cs.wmich.edu/~rhardin/f14cs1120/InClass/Binary%20Heaps.html
+
+Code:
+http://algorithms.tutorialhorizon.com/binary-min-max-heap/
+
+Tasks: 
+Heap Sort
+Implementing Priority Queue with Heap
