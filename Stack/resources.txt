@@ -1,0 +1,11 @@
+Wikipedia:
+https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues
+
+Applications:
+https://www.quora.com/What-are-some-real-world-applications-of-a-stack-data-structure
+
+Tasks:
+https://www.hackerrank.com/domains/data-structures/stacks
+http://www.geeksforgeeks.org/tag/stack/
+
