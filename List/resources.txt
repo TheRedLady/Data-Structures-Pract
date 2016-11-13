@@ -1,0 +1,13 @@
+Wikipedia:
+https://en.wikipedia.org/wiki/List_(abstract_data_type)
+https://en.wikipedia.org/wiki/Linked_list
+
+LinkedList vs. Array:
+http://www.geeksforgeeks.org/linked-list-vs-array/
+
+Tasks and more:
+http://quiz.geeksforgeeks.org/linked-list-set-1-introduction/
+http://www.geeksforgeeks.org/data-structures/linked-list/
+
+Applications:
+https://www.quora.com/What-is-an-application-of-linear-linked-list-data-structures
