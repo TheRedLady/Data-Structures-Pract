@@ -1,0 +1,11 @@
+Wikipedia:
+https://en.wikipedia.org/wiki/Binary_search_tree
+
+Other:
+http://www.algolist.net/Data_structures/Binary_search_tree (good explanations for each operation)
+http://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/binarySearchTree.htm
+http://www.geeksforgeeks.org/618/
+https://en.wikipedia.org/wiki/Tree_traversal
+
+Tasks:
+http://www.geeksforgeeks.org/category/binary-search-tree/
