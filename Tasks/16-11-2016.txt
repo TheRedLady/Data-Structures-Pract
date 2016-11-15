@@ -1,0 +1,15 @@
+1. Find longest consecutive sequence in binary tree.
+
+2. Construct a binary tree from given postorder and inorder traversals.
+
+3. Check whether a binary tree is a full binary tree or not.
+
+4. Find sum of all left leaves in a given binary tree.
+
+5. The Celebrity Problem: In a party of N people, only one person is known to everyone. Such a person may or may not be at the party, if yes,
+(s)he doesn’t know anyone at the party. 
+We can only ask “does A know B?“. Find the stranger (celebrity) in minimum number of questions.  
+We can describe the problem input as an array of numbers/characters representing persons in the party. 
+We also have a hypothetical function HaveAcquaintance(A, B) which returns true if A knows B, false otherwise. The relation is not symmetrical.  
+
+6. Convert min binary heap to max binary heap.
