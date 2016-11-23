@@ -1,0 +1,15 @@
+Implement a self-balancing binary search tree (AVL tree) 
+with the following operations: insertion, deletion, search.
+
+Some helper methods when balancing: rotate (left or right depending on
+which subtree has caused disbalance), check for balance 
+(are there nodes whose children's heights differ by more than 1), 
+calculate difference in height between two nodes.
+
+Hints:
+https://en.wikipedia.org/wiki/AVL_tree
+https://www.cpp.edu/~ftang/courses/CS241/notes/self%20balance%20bst.htm
+https://www.cs.auckland.ac.nz/software/AlgAnim/AVL.html
+
+Helpful visualization:
+https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
