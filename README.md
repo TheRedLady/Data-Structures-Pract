@@ -24,6 +24,13 @@
   <li>http://codeforces.com </li>
 </ul>
 
+<h3> C++ Iterators: </h3>
+<ul>
+  <li> http://www.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterators.html </li>
+  <li> http://en.cppreference.com/w/cpp/concept/Iterator </li>
+  <li> http://www.cplusplus.com/reference/iterator/ </li>
+</ul>
+
 <h3> Literature: </h3>
 <ul>
   <li> Richard Reese (2013) Understanding and Using C Pointers - Core techniques for memory management. O'Reilly Media </li>
