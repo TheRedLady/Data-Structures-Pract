@@ -1,0 +1,4 @@
+1. Print a singly linked list in reverse.
+2. Check if two given sets are disjoint.
+3. Do BFS and DFS on graph (use any implementation) printing each element.
+4. Implement queue using two stacks.
