@@ -31,6 +31,12 @@
   <li> http://www.cplusplus.com/reference/iterator/ </li>
 </ul>
 
+<h3> C++ STL References: </h3>
+<ul>
+  <li> http://www.cplusplus.com/reference/stl/ </li>
+  <li> http://en.cppreference.com/w/ </li>
+</ul>
+
 <h3> Literature: </h3>
 <ul>
   <li> Richard Reese (2013) Understanding and Using C Pointers - Core techniques for memory management. O'Reilly Media </li>
