@@ -17,11 +17,13 @@ void sameElems(Node * root1, Node * root2) {
 	current.push_back(root1);
 	while (!current.empty()) {
 		Node * currentNode = current.top();
+		// or just elems[currentNode->data] = true/false
 		elems.insert(currentNode->data);
 		current.pop();
 		if (currentNode->left != nullptr) {
 			current.push_back(currentNode->left);
 		}
+		// small error - current.top() should be currentNode
 		if (current.top()->right != nullptr) {
 			current.push_back(currentNode->right);
 		}

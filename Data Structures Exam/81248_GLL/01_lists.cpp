@@ -47,6 +47,7 @@ Node* listUnion(const Node* first, const Node* second)
 	Node* newList = new Node(first->data); //hack
 	unordered_map<int, bool> unionElems;
 
+	// why check if first is nullptr only after you have used it ^ - first->data
 	if(first == nullptr && second == nullptr)
 	{
 		return newList;

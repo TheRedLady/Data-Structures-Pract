@@ -8,7 +8,7 @@ using namespace std;
 
 
 string top10[10];
-void mostCommon(string fileName){
+void mostCommon(const char* fileName){
 
   ifstream file;
   file.open (fileName);
@@ -19,6 +19,7 @@ void mostCommon(string fileName){
 
   while (file >> word)
   {
+  // not the best use of map methods..
     count = mymap.find(word)->second;
     if(mymap.count(word) != 0){
       mymap.erase(word);
@@ -40,7 +41,7 @@ void mostCommon(string fileName){
 int main ()
 {
 
-  
+	
   mostCommon("example.txt");
   
 

@@ -5,6 +5,7 @@
 using namespace std;
 
 void printMost10(char * inc) {
+	// should be read from file
 	int max10s[10] = { 0 };
 	string max10Words[10];
 	map<string, int> allWords;

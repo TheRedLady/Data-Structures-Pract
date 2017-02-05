@@ -44,6 +44,7 @@ void printBSTIntersectionsUsingExtraMemory(Node* firstRoot, Node* secondRoot)
     int ind1 = 0, ind2 = 0;
     while ((ind1 < firstTreeElements.size()) && (ind2 < secondTreeElements.size()))
     {
+	// why use indices - they may not be consecutive
         if (firstTreeElements[ind1] == secondTreeElements[ind2])
         {
             cout << firstTreeElements[ind1] << endl;

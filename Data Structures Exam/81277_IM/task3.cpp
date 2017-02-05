@@ -2,7 +2,7 @@
 #include <stack>
 using namespace std;
 
-void insertSorted (stack<int> st, int current)
+void insertSorted (stack<int>& st, int current)
 {
     if (st.empty()||current>st.top())
     {
@@ -15,7 +15,8 @@ void insertSorted (stack<int> st, int current)
     st.push(temp);
 }
 
-void sortStack (stack<int> st)
+// pass by reference
+void sortStack (stack<int>& st)
 {
     if (!st.empty())
     {
@@ -34,10 +35,14 @@ int main()
     st.push(10);
     st.push(4);
     st.push(5);
-    print(st);
+//    print(st);
     cout<<endl;
+    // doesn't work because you are not changing the stack
     sortStack(st); //doesn't work, no clue why
-    print(st);
+    while(!st.empty()) {
+	cout << st.top() << endl;
+	st.pop();
+    }
 
     return 0;
 }

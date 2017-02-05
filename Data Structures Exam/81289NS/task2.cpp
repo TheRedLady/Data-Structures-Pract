@@ -7,7 +7,7 @@ struct Node {
 	Node* left;
 	Node* right;
 };
-
+// would work only on levels
 void fixTree(Node *root){
 	if(root->left->data > root->right->data){
 		Node *tmp = root->right;

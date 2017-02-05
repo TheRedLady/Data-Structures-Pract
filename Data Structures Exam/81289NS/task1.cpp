@@ -29,7 +29,8 @@ bool isPresent (Node *head, int data){
 Node *obedinenie(Node *head1, Node *head2){
     Node *result = NULL;
     Node *t1 = head1, *t2 = head2;
- 
+
+// what if t1 has duplicating values 
     while (t1 != NULL){
         push(&result, t1->data);
         t1 = t1->next;

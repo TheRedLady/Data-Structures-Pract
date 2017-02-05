@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1484826122 source:c:\users\grade\kontrolno1\main.cpp
+	<iostream>
+	<stack>
+	<vector>
+	<map>
+	<assert.h>
+

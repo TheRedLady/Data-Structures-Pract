@@ -27,7 +27,7 @@ bool presentStack (stack<int> st, int data)
 void unitedLists (Node* first, Node* second)
 {
     stack<int> result;
-
+    // does not handle duplicates
     while (first != nullptr)
     {
         result.push (first->data);
@@ -49,6 +49,7 @@ void intersection (Node* first, Node* second)
     stack<int> result;
     while(first!=nullptr)
     {
+	// presentStack takes stack as argument, not node
         if(presentStack(second,first->data))
         {
             result.push(first->data);

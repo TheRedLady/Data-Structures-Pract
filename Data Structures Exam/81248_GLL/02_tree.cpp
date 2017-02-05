@@ -1,3 +1,6 @@
+#include <iostream>
+
+using namespace std;
 
 struct Node
 {
@@ -24,6 +27,7 @@ void insertInTree(Node* &root, const int& elem)
 	{
 		root = new Node(elem);
 	}
+	// infinite recursion because of root in ^
 	if(elem <= root->data)
 	{
 		insertInTree(root->left, elem);
@@ -55,4 +59,14 @@ Node*  fixBrokenTree(Node* root)
 		reinsertElements(root, newRoot);
 	}
 	return newRoot;
+}
+
+
+int main() {
+
+	Node* mytree = new Node(5);
+	insertInTree(mytree, 6);
+return 0;
+
+
 }
