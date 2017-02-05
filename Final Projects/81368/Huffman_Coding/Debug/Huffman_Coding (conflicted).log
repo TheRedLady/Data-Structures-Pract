@@ -1,0 +1,22 @@
+﻿Build started 25.1.2017 г. 23:05:24 ч..
+     1>Project "D:\visual studio\СДП\Huffman_Coding\Huffman_Coding\Huffman_Coding.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BTree.cpp HuffmanDecoder.cpp HuffmanEncoder.cpp Source.cpp
+         Source.cpp
+         HuffmanEncoder.cpp
+     1>d:\visual studio\сдп\huffman_coding\huffman_coding\huffmanencoder.cpp(33): warning C4018: '<' : signed/unsigned mismatch
+         HuffmanDecoder.cpp
+     1>d:\visual studio\сдп\huffman_coding\huffman_coding\huffmandecoder.cpp(25): warning C4018: '<' : signed/unsigned mismatch
+         BTree.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\visual studio\СДП\Huffman_Coding\Debug\Huffman_Coding.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\visual studio\СДП\Huffman_Coding\Debug\Huffman_Coding.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\visual studio\СДП\Huffman_Coding\Debug\Huffman_Coding.lib" /MACHINE:X86 Debug\BTree.obj
+         Debug\HuffmanDecoder.obj
+         Debug\HuffmanEncoder.obj
+         Debug\Source.obj
+         Huffman_Coding.vcxproj -> D:\visual studio\СДП\Huffman_Coding\Debug\Huffman_Coding.exe
+     1>Done Building Project "D:\visual studio\СДП\Huffman_Coding\Huffman_Coding\Huffman_Coding.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.50
