@@ -1,0 +1,383 @@
+ 
+
+#include<iostream>
+#include<stack>
+#include<cstring>
+#include<cmath>
+using namespace std;
+
+
+class Calculator
+{
+private:
+    stack<double> operation;
+    string oper;
+public:
+
+    Calculator(){}
+
+
+
+
+
+    void addOperation(string operat)
+
+    {
+     oper=operat;
+
+    }
+
+
+
+    void top()
+
+    {
+
+
+if(!operation.empty())
+        cout<<operation.top()<<endl;
+        else
+            cout<<"No elements in the stack"<<endl;
+    }
+
+
+
+
+
+    void pop ()
+
+        {
+        if(!operation.empty())
+
+            operation.pop();
+
+        else
+
+                cout<<"No elements in the stack"<<endl;
+        }
+
+
+
+
+    void clearing ()
+
+
+    {
+
+        while(!operation.empty())
+        {
+            operation.pop();
+        }
+
+    }
+
+
+
+
+
+    void show ()
+
+    {
+        if(operation.empty())
+            cout<<"There is nothing in the stack"<<endl;
+        else
+            {
+
+            int i=operation.size();
+
+            while(!operation.empty())
+                {
+
+
+                cout<<"Element "<<i<<" is: "<<operation.top()<<endl;
+
+                operation.pop();
+                i--;
+
+                }
+            }
+
+    }
+
+
+
+
+
+   void calculate ()
+
+    {
+
+     int i=oper.length();
+
+     while(i>=0)
+
+     {
+
+         if(48<=oper[i]&&oper[i]<=57)
+         {
+
+             char a = oper[i];
+
+              double ia = a - '0';
+             operation.push(ia);
+
+         }
+
+         //за дробни числа
+
+         if(oper[i]==')')
+
+         {
+            i--;
+             double acc=0;
+             int j=0;
+
+             while(oper[i]!='(')
+             {
+
+                 if(oper[i]=='.')
+                 {
+                     i--;
+
+
+                 }
+                 else
+                    {
+
+                        char a = oper[i];
+
+                        double ia = a - '0';
+
+
+                    acc= acc*pow(10,-j)+ia;
+
+                    i--;
+                    j++;
+
+                    }
+
+
+
+             }
+             operation.push(acc);
+
+
+
+         }
+
+        if(oper[i]==43)
+         {
+
+             double x;
+
+
+             double a = operation.top();
+
+
+            operation.pop();
+             double b = operation.top();
+
+
+            operation.pop();
+            x=a+b;
+
+            operation.push(x);
+
+         }
+
+          if(oper[i]==42)
+         {
+
+             double x;
+
+
+             double a = operation.top();
+
+
+            operation.pop();
+             double b = operation.top();
+
+
+            operation.pop();
+            x=a*b;
+
+            operation.push(x);
+
+     }
+
+          if(oper[i]==45)
+         {
+
+             double x;
+
+
+             double a = operation.top();
+
+
+            operation.pop();
+             double b = operation.top();
+
+
+            operation.pop();
+            x=a-b;
+
+            operation.push(x);
+
+     }
+
+         if(oper[i]==47)
+         {
+
+             double x;
+
+
+             double a = operation.top();
+
+
+            operation.pop();
+             double b = operation.top();
+
+
+            operation.pop();
+            x=a/b;
+
+            operation.push(x);
+
+     }
+
+
+if(oper[i]=='n'&&oper[i-1]=='i')
+     {
+
+         double x;
+
+         double a=operation.top();
+
+         operation.pop();
+
+         x=sin(a);
+
+
+        operation.push(x);
+
+
+
+     }
+
+
+     if(oper[i]=='s'&&oper[i-1]=='o')
+     {
+
+         double x;
+
+         double a=operation.top();
+
+         operation.pop();
+
+         x=cos(a);
+
+
+        operation.push(x);
+
+
+
+
+     }
+
+
+     if(oper[i]=='p')
+     {
+
+
+
+
+         double x;
+
+         double a=operation.top();
+
+         operation.pop();
+        double e=2.71828182846;
+         x=pow(e,a);
+         operation.push(x);
+
+     }
+
+
+     if(oper[i]=='g')
+     {
+
+
+
+
+         double x;
+
+         double a=operation.top();
+
+         operation.pop();
+
+         x= log(a);
+         operation.push(x);
+
+     }
+
+
+
+     if(oper[i]=='t')
+     {
+
+
+
+
+         double x;
+
+         double a=operation.top();
+
+         operation.pop();
+
+         x=sqrt(a);
+         operation.push(x);
+
+     }
+
+
+
+
+
+     i--;
+ }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+};
+
+
+
+int main()
+{
+
+Calculator a;
+a.addOperation("+2sqrt9");
+a.calculate();
+
+
+
+  a.show();
+
+
+
+return 0;
+}
