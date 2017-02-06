@@ -1,0 +1,198 @@
+#include <iostream>
+#include <stack>
+#include <string>
+#include <fstream>
+using namespace std;
+
+struct Node {
+	string text;
+	Node * next;
+	Node() : text(""), next(nullptr) {}
+	Node(string _text, Node* _next) : text(_text), next(_next) {}
+};
+
+class Texty {
+private:
+	Node * editor;
+	int currentLine;
+
+public:
+	Texty() {
+		editor = nullptr;
+		currentLine = 0;
+	}
+
+	void insert(string inputLine) {
+		if (inputLine.find("//") == string::npos) {
+			Node * temp = editor;
+			int tempLine = currentLine;
+			if (tempLine == 0 && temp == nullptr) {
+				editor = new Node(inputLine, nullptr);
+			}
+			else {
+				while (tempLine != 0) {
+					temp = temp->next;
+					tempLine--;
+				}
+				if (temp == nullptr) {
+					Node * insertedLine = new Node(inputLine, nullptr);
+					temp = insertedLine;
+					currentLine++;
+
+				}
+				else {
+					Node * tempNext = temp->next;
+					Node * insertedLine = new Node(inputLine, tempNext);
+					temp->next = insertedLine;
+					currentLine++;
+				}
+			}
+		}
+		//if '//' exists
+		else {
+			size_t found = inputLine.find("//");
+			string insertedText = inputLine.substr(0, found);
+			Node * temp = editor;
+			int tempLine = currentLine;
+			if (tempLine == 0 && temp == nullptr) {
+				editor = new Node(insertedText, nullptr);
+			}
+			else {
+				while (tempLine != 0) {
+					temp = temp->next;
+					tempLine--;
+				}
+				if (temp == nullptr) {
+					Node * insertedLine = new Node(insertedText, nullptr);
+					temp = insertedLine;
+					currentLine++;
+
+				}
+				else {
+					Node * tempNext = temp->next;
+					Node * insertedLine = new Node(insertedText, tempNext);
+					temp->next = insertedLine;
+					currentLine++;
+				}
+			}
+			inputLine.erase(0, found + 2);
+			this->insert(inputLine);
+		}
+	}
+
+	void del() {
+		if (currentLine == 0) {
+			Node * temp = editor;
+			editor = temp->next;
+			temp->next = nullptr;
+			delete temp;
+		}
+		else {
+			Node * temp = editor;
+			int tempLine = currentLine-1;
+			while (tempLine!=0) {
+				temp = temp->next;
+				tempLine--;
+			}
+			Node * tempNext = temp->next;
+			temp->next = tempNext->next;
+			tempNext->next = nullptr;
+			delete tempNext;
+		}
+	}
+
+	void move(int num) {
+		Node * temp = editor;
+		if (num < 0) {
+			int newLine = currentLine + num;
+			if (newLine < 0) {
+				cout << "Invalid Index" << endl;
+			}
+			else {
+				currentLine = newLine;
+				while (newLine != 0) {
+					temp = temp->next;
+					newLine--;
+				}
+				cout << temp->text << endl;
+			}
+		}
+		else if (num > 0) {
+			int newLine = currentLine + num;
+			currentLine = newLine;
+			while (newLine != 0 && temp!=nullptr) {
+				temp = temp->next;
+				newLine--;
+			}
+			if (temp == nullptr) {
+				cout << "Invalid Index" << endl;
+			}
+			else {
+				cout << temp->text << endl;
+			}
+		}
+	}
+
+	void listAll() {
+		Node * temp = editor;
+		int tempLine = currentLine;
+		while (tempLine != 0) {
+			temp = temp->next;
+			tempLine--;
+		}
+		while (temp != nullptr) {
+			cout << temp->text << endl;
+			temp = temp->next;
+		}
+	}
+
+	void exit(string outputName) {
+		ofstream output(outputName+".txt");
+		Node * temp = editor;
+		string tempText="";
+		if (temp != nullptr) {
+			tempText = temp->text;
+			while (temp != nullptr) {
+				output << tempText << endl;
+				if (temp->next!=nullptr) {
+					temp = temp->next;
+					tempText = temp->text;
+				}
+				else {
+					break;
+				}
+			}
+		}
+		output.close();
+	}
+};
+
+
+int main() {
+	Texty newFile;
+	string keyAction;
+	do {
+		getline(cin, keyAction);
+		if (!strncmp(keyAction.c_str(), "-IN", 3)) {
+			keyAction.erase(0, 4);
+			newFile.insert(keyAction);
+		}
+		else if (!strncmp(keyAction.c_str(), "-DE", 3)) {
+			newFile.del();
+		}
+		else if (!strncmp(keyAction.c_str(), "-MO", 3)) {
+			keyAction.erase(0, 4);
+			int numLine = stoi(keyAction);
+			newFile.move(numLine);
+		}
+		else if (!strncmp(keyAction.c_str(), "-LA", 3)) {
+			newFile.listAll();
+		}
+		else if(strncmp(keyAction.c_str(), "-EX", 3)){
+			cout << "Wrong Command" << endl;
+		}
+	} while (strncmp(keyAction.c_str(), "-EX", 3));
+	keyAction.erase(0, 4);
+	newFile.exit(keyAction);
+	return 0;
+}
